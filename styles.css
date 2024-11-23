@@ -1,0 +1,98 @@
+/* Import the custom font */
+@font-face {
+    font-family: 'ArcaneNine';
+    src: url('./Fonts/ArcaneNine.otf') format('opentype'); /* Ensure the path is correct */
+}
+
+/* General Body Styling */
+body {
+    font-family: 'ArcaneNine', Arial, sans-serif; /* Use ArcaneNine as the primary font */
+    background: url('./Images/Arcane_Season_2.jpg') no-repeat center center fixed; /* Main background image */
+    background-size: cover;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    position: relative; /* Required for overlay positioning */
+    overflow: hidden; /* Prevents content overflow */
+}
+
+body::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Existing dim overlay */
+    z-index: -2; /* Ensure it's below the logo */
+}
+
+/* Timer Container Styling */
+.timer-container {
+    background: rgba(0, 0, 0, 0.85); /* Slightly transparent black for contrast */
+    padding: 30px;
+    border-radius: 25px; /* Rounded corners for a polished look */
+    border: 2px solid #d4af37; /* Gold border */
+    position: absolute;
+    top: 50%; /* Vertically centered */
+    right: 18%; /* Positioned to the right */
+    transform: translateY(-50%);
+}
+
+/* Heading Styling */
+.timer-container h1 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+    font-family: 'ArcaneNine', Arial, sans-serif; /* Use ArcaneNine for the heading */
+    color: #d4af37; /* Gold color */
+    text-align: center;
+    text-transform: uppercase; /* Matches the Arcane Nine style */
+}
+
+/* Timer Layout */
+#timer {
+    display: flex;
+    gap: 20px; /* Space between time boxes */
+    align-items: center;
+    justify-content: center;
+}
+
+/* Individual Time Box Styling */
+.time-box {
+    background: rgba(0, 0, 0, 0.7); /* Slightly transparent black for boxes */
+    padding: 20px 25px;
+    border-radius: 15px; /* Matches rounded corners style */
+    border: 1px solid #d4af37; /* Gold border */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Timer Number Styling */
+.time-box span {
+    display: block;
+    font-size: 4rem; /* Larger numbers */
+    font-weight: bold;
+    font-family: 'ArcaneNine', Arial, sans-serif;
+    color: #ffffff; /* Crisp white text */
+}
+
+/* Timer Label Styling */
+.time-box p {
+    margin: 0;
+    font-size: 1.2rem;
+    font-family: 'ArcaneNine', Arial, sans-serif;
+    color: #d4af37; /* Gold text for labels */
+    text-transform: uppercase;
+}
+
+/* Hide the "Days" Time Box */
+.time-box.days {
+    display: none; /* Hides the entire days box */
+}
